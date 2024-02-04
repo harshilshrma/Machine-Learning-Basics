@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -28,3 +29,10 @@ y_pred = model.predict(X_test)
 # Evaluating the model by mean squared error
 mse = mean_squared_error(y_test, y_pred)
 print(f'Mean square error: {mse}')
+
+# Scatter plot of actual vs. predicted values
+plt.scatter(y_test, y_pred)
+plt.xlabel('Actual Values (y_test)')
+plt.ylabel('Predicted Values (y_pred)')
+plt.title('Actual vs. Predicted Values')
+plt.show()
